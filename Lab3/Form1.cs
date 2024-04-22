@@ -103,7 +103,7 @@ namespace Lab3
         private void изменитьКолвоВершинToolStripMenuItem_Click(object sender, EventArgs e)
         {
             form4 = new Form4();
-            form4.ShowDialog();
+            form4.ShowDialog;
         }
 
         private void добавитьРеброToolStripMenuItem_Click(object sender, EventArgs e)
