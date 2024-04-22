@@ -24,7 +24,7 @@ namespace Lab3
         public delegate void ReRenderMessageHandler();
         public static event ReRenderMessageHandler MessageSent;
 
-        private static void SendReRenderingMessage()
+        public static void SendReRenderingMessage()
         {
             MessageSent?.Invoke();
         }
@@ -32,7 +32,7 @@ namespace Lab3
         static GraphData()
         {
            paths = new List<List<int>>();
-           shortestPath = null;
+           shortestPath = new List<int>();
            startV = 0;
            endV = 0;
         }
@@ -65,10 +65,11 @@ namespace Lab3
                             copyCurrPath.Add(item);
                             if (CheckPath(copyCurrPath))
                             {
-                                if (shortestPath == null || shortestPath.Count > copyCurrPath.Count)
+                                if (shortestPath.Count > copyCurrPath.Count || shortestPath.Count == 0)
                                     shortestPath = copyCurrPath;
                                     paths.Add(copyCurrPath);
                                     SendReRenderingMessage();
+                                    Thread.Sleep(1000);
                             }
                         }
                         else
@@ -97,6 +98,22 @@ namespace Lab3
             if (shortestPath != null) 
                 shortestPath.Clear();
         }
+        
+        public static void RefreshAll()
+        {
+            paths.Clear();
+            if (shortestPath != null)
+                shortestPath.Clear();
+            graph = null;
+            v1 = null;
+            v2 = null;
+            e11 = null;
+            e12 = null;
+            e21 = null;
+            e22 = null;
+            startV = 0;
+            endV = 0;
+        }
 
         public static void PaintGraph(Graphics g, int Height, int Width)
         {
@@ -105,9 +122,11 @@ namespace Lab3
             ConnectAllVertices(g, Height, Width, pen);
 
             pen.Color = Color.Red;
-            PrintPath(g, Height, Width, pen, paths[paths.Count-1]);
+            if (paths.Count > 0)
+                PrintPath(g, Height, Width, pen, paths[paths.Count-1]);
 
             pen.Color = Color.LimeGreen;
+            if (shortestPath.Count > 1)
             PrintPath(g,Height, Width, pen, shortestPath);
 
             pen.Color = Color.Black;

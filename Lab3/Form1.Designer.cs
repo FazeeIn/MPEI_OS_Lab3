@@ -30,12 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.графToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ввестиВершиныИРебраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.найтиКратчайшийПутьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьРеброToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьКолвоВершинToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,19 +57,12 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьToolStripMenuItem,
             this.открытьToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
             this.файлToolStripMenuItem.Text = "Файл";
             this.файлToolStripMenuItem.Click += new System.EventHandler(this.файлToolStripMenuItem_Click);
-            // 
-            // создатьToolStripMenuItem
-            // 
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.создатьToolStripMenuItem.Text = "Создать";
             // 
             // открытьToolStripMenuItem
             // 
@@ -88,7 +82,9 @@
             // 
             this.графToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ввестиВершиныИРебраToolStripMenuItem,
-            this.найтиКратчайшийПутьToolStripMenuItem});
+            this.найтиКратчайшийПутьToolStripMenuItem,
+            this.добавитьРеброToolStripMenuItem,
+            this.изменитьКолвоВершинToolStripMenuItem});
             this.графToolStripMenuItem.Name = "графToolStripMenuItem";
             this.графToolStripMenuItem.Size = new System.Drawing.Size(47, 22);
             this.графToolStripMenuItem.Text = "Граф";
@@ -96,16 +92,30 @@
             // ввестиВершиныИРебраToolStripMenuItem
             // 
             this.ввестиВершиныИРебраToolStripMenuItem.Name = "ввестиВершиныИРебраToolStripMenuItem";
-            this.ввестиВершиныИРебраToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.ввестиВершиныИРебраToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.ввестиВершиныИРебраToolStripMenuItem.Text = "Ввести вершины и ребра";
             this.ввестиВершиныИРебраToolStripMenuItem.Click += new System.EventHandler(this.ввестиВершиныИРебраToolStripMenuItem_Click);
             // 
             // найтиКратчайшийПутьToolStripMenuItem
             // 
             this.найтиКратчайшийПутьToolStripMenuItem.Name = "найтиКратчайшийПутьToolStripMenuItem";
-            this.найтиКратчайшийПутьToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.найтиКратчайшийПутьToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.найтиКратчайшийПутьToolStripMenuItem.Text = "Найти кратчайший путь";
             this.найтиКратчайшийПутьToolStripMenuItem.Click += new System.EventHandler(this.найтиКратчайшийПутьToolStripMenuItem_Click);
+            // 
+            // добавитьРеброToolStripMenuItem
+            // 
+            this.добавитьРеброToolStripMenuItem.Name = "добавитьРеброToolStripMenuItem";
+            this.добавитьРеброToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.добавитьРеброToolStripMenuItem.Text = "Добавить ребро ";
+            this.добавитьРеброToolStripMenuItem.Click += new System.EventHandler(this.добавитьРеброToolStripMenuItem_Click);
+            // 
+            // изменитьКолвоВершинToolStripMenuItem
+            // 
+            this.изменитьКолвоВершинToolStripMenuItem.Name = "изменитьКолвоВершинToolStripMenuItem";
+            this.изменитьКолвоВершинToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.изменитьКолвоВершинToolStripMenuItem.Text = "Изменить кол-во вершин";
+            this.изменитьКолвоВершинToolStripMenuItem.Click += new System.EventHandler(this.изменитьКолвоВершинToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -134,7 +144,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem графToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem найтиКратчайшийПутьToolStripMenuItem;
@@ -143,6 +152,10 @@
         private System.Windows.Forms.ToolStripMenuItem ввестиВершиныИРебраToolStripMenuItem;
         private Form2 form2;
         private Form3 form3;
+        private Form4 form4;
+        private Form5 form5;
+        private System.Windows.Forms.ToolStripMenuItem добавитьРеброToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изменитьКолвоВершинToolStripMenuItem;
     }
 }
 

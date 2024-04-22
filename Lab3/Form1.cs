@@ -14,7 +14,7 @@ namespace Lab3
 {
     public partial class Form1 : Form
     {
-        Graphics g;
+        public Graphics g;
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace Lab3
         {
             openFileDialog1.InitialDirectory = "G:\\Другие компьютеры\\Пекарня\\6 сем\\Введение в операционные системы\\Lab3";
             openFileDialog1.Filter = "txt files (*.txt)|*.txt";
-
+            GraphData.RefreshAll();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var path = openFileDialog1.FileName;
@@ -59,6 +59,8 @@ namespace Lab3
                         GraphData.graph[k, j] = intArray[j];
                     k++;
                 }
+                
+                g.Clear(Color.White);
                 GraphData.ConnectAllVertices(g, Height, Width, new Pen(Color.Black,2));
                 GraphData.DrawVertices(g, Height, Width);
 
@@ -95,8 +97,19 @@ namespace Lab3
         {
             Thread.BeginCriticalRegion();
             GraphData.PaintGraph(g, this.Height, this.Width);
-            Thread.Sleep(1000);
             Thread.EndCriticalRegion();
+        }
+
+        private void изменитьКолвоВершинToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form4 = new Form4();
+            form4.ShowDialog();
+        }
+
+        private void добавитьРеброToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form5 = new Form5();
+            form5.ShowDialog();
         }
     }
 }
